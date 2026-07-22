@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 135" width="480" height="270" font-family="Helvetica, Arial, sans-serif">
+  <defs><clipPath id="s"><rect width="240" height="135" rx="6"/></clipPath></defs>
+  <g clip-path="url(#s)">
+    <rect width="240" height="135" fill="#000"/>
+    <rect width="240" height="20" fill="#FFA600"/>
+    <text x="6" y="14" font-size="12" font-weight="bold" fill="#000">G D Em C  [RUN]</text>
+    <!-- left: chord name + info -->
+    <text x="62" y="60" font-size="40" font-weight="bold" fill="#FFA600" text-anchor="middle">G</text>
+    <text x="62" y="86" font-size="12" fill="#fff" text-anchor="middle">next  D</text>
+    <text x="62" y="102" font-size="8" fill="#7a7a7a" text-anchor="middle">chord 1/4   2 bar(s)</text>
+    <!-- right: fingering diagram (G = 3 2 0 0 0 3) -->
+    <g stroke="#5a5a5a" fill="none">
+      <line x1="132" y1="34" x2="222" y2="34" stroke-width="3"/>
+      <line x1="132" y1="48" x2="222" y2="48"/>
+      <line x1="132" y1="62" x2="222" y2="62"/>
+      <line x1="132" y1="76" x2="222" y2="76"/>
+      <line x1="132" y1="90" x2="222" y2="90"/>
+      <line x1="132" y1="104" x2="222" y2="104"/>
+      <line x1="132" y1="34" x2="132" y2="104"/>
+      <line x1="150" y1="34" x2="150" y2="104"/>
+      <line x1="168" y1="34" x2="168" y2="104"/>
+      <line x1="186" y1="34" x2="186" y2="104"/>
+      <line x1="204" y1="34" x2="204" y2="104"/>
+      <line x1="222" y1="34" x2="222" y2="104"/>
+    </g>
+    <!-- open strings (o) -->
+    <circle cx="168" cy="30" r="2" fill="none" stroke="#00FFFF"/>
+    <circle cx="186" cy="30" r="2" fill="none" stroke="#00FFFF"/>
+    <circle cx="204" cy="30" r="2" fill="none" stroke="#00FFFF"/>
+    <!-- finger dots -->
+    <circle cx="132" cy="69" r="3" fill="#FFA600"/>
+    <circle cx="150" cy="55" r="3" fill="#FFA600"/>
+    <circle cx="222" cy="69" r="3" fill="#FFA600"/>
+    <!-- bottom progression strip, G highlighted -->
+    <rect x="5" y="112" width="10" height="10" fill="#FFA600"/>
+    <text x="6" y="120" font-size="8" fill="#000">G</text>
+    <text x="24" y="120" font-size="8" fill="#7a7a7a">D</text>
+    <text x="38" y="120" font-size="8" fill="#7a7a7a">Em</text>
+    <text x="58" y="120" font-size="8" fill="#7a7a7a">C</text>
+    <text x="4" y="132" font-size="8" fill="#7a7a7a">SPACE run  UP/DN bpm  L/R prog  b:bars</text>
+  </g>
+  <rect width="240" height="135" rx="6" fill="none" stroke="#333"/>
+</svg>

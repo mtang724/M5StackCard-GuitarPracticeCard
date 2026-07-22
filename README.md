@@ -47,16 +47,16 @@ over to the others.
 
 ## Screenshots
 
-> Photos of the device screen. Drop your images into [`docs/`](docs/) with these names and
-> they'll show up here.
+> UI mockups rendered from the actual on‑device layout and colours (240 × 135). Swap in
+> real device photos anytime by replacing the files in [`docs/`](docs/).
 
 | Menu | Metronome | Tuner |
 |:----:|:---------:|:-----:|
-| ![Menu](docs/menu.jpg) | ![Metronome](docs/metronome.jpg) | ![Tuner](docs/tuner.jpg) |
+| ![Menu](docs/menu.svg) | ![Metronome](docs/metronome.svg) | ![Tuner](docs/tuner.svg) |
 
 | Chord Progression | Record & Check |
 |:-----------------:|:--------------:|
-| ![Chord Progression](docs/chords.jpg) | ![Record & Check](docs/record.jpg) |
+| ![Chord Progression](docs/chords.svg) | ![Record & Check](docs/record.svg) |
 
 ---
 

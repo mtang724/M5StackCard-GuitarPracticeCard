@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 135" width="480" height="270" font-family="Helvetica, Arial, sans-serif">
+  <defs><clipPath id="s"><rect width="240" height="135" rx="6"/></clipPath></defs>
+  <g clip-path="url(#s)">
+    <rect width="240" height="135" fill="#000"/>
+    <rect width="240" height="20" fill="#FFA600"/>
+    <text x="6" y="14" font-size="12" font-weight="bold" fill="#000">Tuner</text>
+    <!-- in-tune note -->
+    <text x="120" y="58" font-size="40" font-weight="bold" fill="#00FF00" text-anchor="middle">E2</text>
+    <text x="120" y="80" font-size="11" fill="#7a7a7a" text-anchor="middle">6th (E2)   82.4 Hz</text>
+    <!-- cents meter -->
+    <line x1="20" y1="100" x2="220" y2="100" stroke="#4a4a4a"/>
+    <line x1="120" y1="92" x2="120" y2="108" stroke="#00FFFF"/>
+    <polygon points="126,90 121,98 131,98" fill="#00FF00"/>
+    <rect x="125" y="98" width="3" height="12" fill="#00FF00"/>
+    <text x="20"  y="114" font-size="7" fill="#7a7a7a">flat</text>
+    <text x="220" y="114" font-size="7" fill="#7a7a7a" text-anchor="end">sharp</text>
+    <text x="120" y="114" font-size="8" fill="#00FF00" text-anchor="middle">+3 cents</text>
+    <text x="4" y="132" font-size="8" fill="#7a7a7a">`:back</text>
+  </g>
+  <rect width="240" height="135" rx="6" fill="none" stroke="#333"/>
+</svg>
