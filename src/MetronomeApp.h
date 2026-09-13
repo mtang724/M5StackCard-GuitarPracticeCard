@@ -6,6 +6,7 @@
 // Metronome
 //   SPACE / ENTER : start / stop
 //   UP / DOWN     : BPM +/- 1     LEFT / RIGHT : BPM +/- 5
+//   1..9 : beats per bar          - / = : beats -/+ 1 (up to 12)
 //   s : cycle time signature      t : tap tempo      ` : back
 // ---------------------------------------------------------------------------
 class MetronomeApp : public App {
@@ -17,6 +18,12 @@ class MetronomeApp : public App {
   uint32_t lastTap  = 0;
 
   void syncBpm(int b) { e.setBpm(b); g.bpm = e.bpm(); }
+  void syncBeats(int n) { g.sigIndex = -1; g.beats = constrain(n, 1, MAX_BEATS); e.setSigFromSettings(); }
+
+  static int digitKey(const KeyEvent& k) {
+    for (char c : k.chars) if (c >= '1' && c <= '9') return c - '0';
+    return 0;
+  }
 
   void tap() {
     uint32_t now = millis();
@@ -35,7 +42,7 @@ public:
   const char* title() const override { return "Metronome"; }
 
   void onEnter() override {
-    e.stop(); e.setBpm(g.bpm); e.setSigIndex(g.sigIndex); dirty = true;
+    e.stop(); e.setBpm(g.bpm); e.setSigFromSettings(); dirty = true;
   }
 
   void handle(const KeyEvent& k) override {
@@ -44,8 +51,11 @@ public:
     else if (k.down)  syncBpm(e.bpm() - 1);
     else if (k.right) syncBpm(e.bpm() + 5);
     else if (k.left)  syncBpm(e.bpm() - 5);
-    else if (k.has('s')) { g.sigIndex = (g.sigIndex + 1) % TIME_SIGS_COUNT; e.setSigIndex(g.sigIndex); }
+    else if (k.has('s')) { g.sigIndex = (g.sigIndex + 1) % TIME_SIGS_COUNT; e.setSigFromSettings(); }
     else if (k.has('t')) tap();
+    else if (k.has('-')) syncBeats(e.sig().beats - 1);
+    else if (k.has('=')) syncBeats(e.sig().beats + 1);
+    else if (int n = digitKey(k)) syncBeats(n);
     dirty = true;
   }
 
@@ -55,6 +65,6 @@ public:
     ui::clear();
     ui::header(e.running ? "Metronome  [RUN]" : "Metronome  [stop]");
     metro::drawFace(e);
-    ui::footer("SPACE run  UP/DN 1  L/R 5  s:sig  t:tap  `:back");
+    ui::footer("SPACE run  1-9 -/= beats  s:sig  t:tap");
   }
 };

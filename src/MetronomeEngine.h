@@ -9,7 +9,14 @@
 class MetronomeEngine {
   int            bpm_  = 100;
   const TimeSig* sig_  = &TIME_SIGS[0];
+  TimeSig        custom_;          // backing store for setBeats()
+  char           customName_[6];   // "12/4"
   uint32_t       nextBeat = 0;
+
+  void useSig(const TimeSig* s) {
+    sig_ = s;
+    if (curBeat >= s->beats) curBeat = 0;   // bar got shorter mid-run
+  }
 
 public:
   bool     running    = false;
@@ -24,7 +31,19 @@ public:
   int  bpm() const   { return bpm_; }
   void setSigIndex(int i) {
     int n = TIME_SIGS_COUNT;
-    sig_ = &TIME_SIGS[((i % n) + n) % n];
+    useSig(&TIME_SIGS[((i % n) + n) % n]);
+  }
+  // A custom n/4 bar, accent on beat 1.
+  void setBeats(int n) {
+    n = constrain(n, 1, MAX_BEATS);
+    snprintf(customName_, sizeof(customName_), "%d/4", n);
+    custom_ = { customName_, (uint8_t)n, 1u };
+    useSig(&custom_);
+  }
+  // Whatever was last picked in the Metronome: a preset or a custom bar.
+  void setSigFromSettings() {
+    if (g.sigIndex < 0) setBeats(g.beats);
+    else                setSigIndex(g.sigIndex);
   }
   const TimeSig& sig() const { return *sig_; }
   uint32_t intervalMs() const { return 60000UL / (bpm_ < 1 ? 1 : bpm_); }

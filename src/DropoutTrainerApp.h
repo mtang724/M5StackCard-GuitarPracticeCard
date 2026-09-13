@@ -22,12 +22,12 @@ class DropoutTrainerApp : public App {
     }
   }
 
-  void begin() { e.setBpm(g.bpm); e.setSigIndex(g.sigIndex); muted = false; e.start(); }
+  void begin() { e.setBpm(g.bpm); e.setSigFromSettings(); muted = false; e.start(); }
 
 public:
   const char* title() const override { return "Dropout Trainer"; }
 
-  void onEnter() override { e.stop(); e.setBpm(g.bpm); e.setSigIndex(g.sigIndex); field = 0; muted = false; dirty = true; }
+  void onEnter() override { e.stop(); e.setBpm(g.bpm); e.setSigFromSettings(); field = 0; muted = false; dirty = true; }
 
   void handle(const KeyEvent& k) override {
     if      (k.space || k.enter) e.running ? e.stop() : begin();
