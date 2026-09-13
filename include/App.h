@@ -37,7 +37,8 @@ struct KeyEvent {
 // ---------------------------------------------------------------------------
 struct Settings {
   int     bpm      = 100;   // 30..300
-  int     sigIndex = 0;     // index into TIME_SIGS[]
+  int     sigIndex = 0;     // index into TIME_SIGS[], or -1 = custom bar of `beats`
+  int     beats    = 4;     // beats per bar when sigIndex == -1 (1..MAX_BEATS)
   uint8_t volume   = 140;   // 0..255
 };
 extern Settings g;
@@ -47,6 +48,7 @@ extern Settings g;
 struct TimeSig { const char* name; uint8_t beats; uint32_t accentMask; };
 extern const TimeSig TIME_SIGS[];
 extern const int     TIME_SIGS_COUNT;
+const int MAX_BEATS = 12;   // longest custom bar (12 dots still fit on screen)
 
 // ---------------------------------------------------------------------------
 // App base class.

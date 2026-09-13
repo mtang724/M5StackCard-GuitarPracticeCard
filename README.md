@@ -35,7 +35,7 @@ over to the others.
 
 | Feature | What it does |
 |--------|--------------|
-| **Metronome** | Adjustable BPM (30–300), time signatures **4/4, 3/4, 2/4, 6/8**, accented downbeat (higher click on beat 1), visual beat dots, audible click through the 1 W speaker. Built‑in **tap tempo**. |
+| **Metronome** | Adjustable BPM (30–300), time signatures **4/4, 3/4, 2/4, 6/8** or any **1–12 beats per bar** (carried over to the trainers), accented downbeat (higher click on beat 1), visual beat dots, audible click through the 1 W speaker. Built‑in **tap tempo**. |
 | **Tempo Trainer** | Starts at a *Start* BPM and automatically increases by *Step* BPM every *Every* bars until it reaches *Target*. For practicing a lick clean, then gradually faster. |
 | **Random Meter** | Randomly switches time signature every phrase (you choose the phrase length in bars) to train your feel for changing meters. |
 | **Dropout Trainer** | The click plays for *Play* bars then goes **silent** for *Mute* bars. Keep the tempo on your own; you'll hear whether you drifted when it comes back. |
@@ -75,7 +75,7 @@ backtick (`` ` ``) key. Those are used everywhere:
 
 Per‑feature keys (shown in each screen's footer):
 
-- **Metronome** — `Space` run · `;`/`.` BPM ±1 · `,`/`/` BPM ±5 · `s` time signature · `t` tap tempo
+- **Metronome** — `Space` run · `;`/`.` BPM ±1 · `,`/`/` BPM ±5 · `1`–`9` beats per bar · `-`/`=` beats ±1 (up to 12) · `s` preset time signature · `t` tap tempo
 - **Tempo Trainer** — `,`/`/` pick field (Start / Target / Step / Every) · `;`/`.` change · `Space` run
 - **Random Meter** — `Space` run · `;`/`.` BPM · `,`/`/` phrase length
 - **Dropout Trainer** — `,`/`/` pick field (BPM / Play / Mute) · `;`/`.` change · `Space` run

@@ -30,7 +30,7 @@ class RandomMeterApp : public App {
 public:
   const char* title() const override { return "Random Meter"; }
 
-  void onEnter() override { e.stop(); e.setBpm(g.bpm); e.setSigIndex(g.sigIndex); dirty = true; }
+  void onEnter() override { e.stop(); e.setBpm(g.bpm); e.setSigFromSettings(); dirty = true; }
 
   void handle(const KeyEvent& k) override {
     if      (k.space || k.enter) e.running ? e.stop() : begin();

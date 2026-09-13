@@ -25,7 +25,7 @@ class TempoTrainerApp : public App {
 
   void begin() {
     if (targetBpm < startBpm) targetBpm = startBpm;
-    e.setBpm(startBpm); e.setSigIndex(g.sigIndex); lastApplied = -1; e.start();
+    e.setBpm(startBpm); e.setSigFromSettings(); lastApplied = -1; e.start();
   }
 
 public:

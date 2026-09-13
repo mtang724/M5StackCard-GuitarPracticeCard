@@ -12,7 +12,7 @@
     <circle cx="109" cy="110" r="5" fill="none" stroke="#5a5a5a"/>
     <circle cx="131" cy="110" r="5" fill="none" stroke="#5a5a5a"/>
     <circle cx="153" cy="110" r="5" fill="none" stroke="#5a5a5a"/>
-    <text x="4" y="132" font-size="7" fill="#7a7a7a">SPACE run  UP/DN 1  L/R 5  s:sig  t:tap  `:back</text>
+    <text x="4" y="132" font-size="7" fill="#7a7a7a">SPACE run  1-9 -/= beats  s:sig  t:tap</text>
   </g>
   <rect width="240" height="135" rx="6" fill="none" stroke="#333"/>
 </svg>
